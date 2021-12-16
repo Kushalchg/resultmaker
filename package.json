@@ -1,0 +1,19 @@
+{
+  "name": "resultmaker",
+  "version": "1.0.0",
+  "description": "\"for educational purpose\"",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kushalchg/resultmaker.git"
+  },
+  "author": "\"kushalchapagain\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kushalchg/resultmaker/issues"
+  },
+  "homepage": "https://github.com/Kushalchg/resultmaker#readme"
+}
