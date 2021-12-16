@@ -16,7 +16,42 @@
     
         <h2>Term:        <input class="enter_term" id="enter_term" type="text">  </h2>
     </label>
-    <button id="submit_value">submit</button>
+    
+    <button id="submit">submit</button>
+
+    <script>
+           //database code
+const Datastore= require('nedb');
+const database= new Datastore('database.db');
+database.loadDatabase();
+
+
+
+            cls= document.getElementsById('enter_class').value.trim();
+            section= document.getElementsById('enter_section').value.trim();
+            subject= document.getElementsById('enter_subject').value.trim();
+            Term= document.getElementsById('enter_term').valme.trim();
+            
+            var data={
+               "class": cls,
+               "section":section,
+               "subject":subject,
+               "term":term
+           } 
+
+        document.getElementById('submit').addEventListener('click',()=>{
+
+           
+            database.insert(data,function(err,newDoc){
+
+            });
+           
+        })
+
+
+
+
+    </script>
 
 </body>
 </html>
