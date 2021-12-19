@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Kushalchg/resultmaker#readme",
   "dependencies": {
+    "express": "^4.17.2",
     "nedb": "^1.8.0"
   }
 }

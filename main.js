@@ -1,31 +1,12 @@
 
-//database code
-const Datastore= require('nedb');
-const database= new Datastore('database.db');
-database.loadDatabase();
-
-
-
-
-var doc = { hello: 'world'
-               , n: 5
-               , today: new Date()
-               , nedbIsAwesome: true
-               , notthere: null
-               , notToBeSaved: undefined  // Will not be saved
-               , fruits: [ 'apple', 'orange', 'pear' ]
-               , infos: { name: 'nedb' }
-               };
-
-database.insert(doc, function (err, newDoc) {   // Callback is optional
-  // newDoc is the newly inserted document, including its _id
-  // newDoc has no key called notToBeSaved since its value was undefined
-});
 
 
 
 
 
+
+
+//electron main woindow
 
 const {app, BrowserWindow,Menu,shell} = require('electron')
   const path = require('path')
@@ -79,7 +60,7 @@ const {app, BrowserWindow,Menu,shell} = require('electron')
           ]
       }
     ]
-
+ app
     const menu= Menu.buildFromTemplate(template);
     Menu.setApplicationMenu(menu);
 
@@ -91,4 +72,14 @@ const {app, BrowserWindow,Menu,shell} = require('electron')
       slashes: true
     }))
 }
-app.on('ready', createWindow)
+
+
+//for server
+
+let server = require('./server.js')
+
+
+app.on('ready', function(){
+  createWindow();
+  win.webContents.openDevTools();
+})
