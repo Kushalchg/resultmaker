@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="script.js"></script>
     <title>document</title>
 </head>
 <body>
@@ -19,61 +20,19 @@
     </label>
     
     <button id="submit">submit</button>
-
-    <script>
-        //get user input from form. 
-
-        const cls =document.getElementById("enter_class").value;
-        const section=document.getElementById("enter_section").value;
-        const subject=document.getElementById("enter_subject").value;
-        const term=document.getElementById("enter_term").value;
-
-        var kushal="kushal";
-        var chapagain="chapagain";
-        // const data={
-        //        cls,
-        //        section,
-        //        subject,
-        //        term
-        //  } 
-
-        const data={
-
-            kushal,chapagain
-    
-        }
-
-        document.getElementById('submit').addEventListener('click',function(){
-            console.log("Hello world!");
-            // console.log(cls);
-            // console.log(section);
-            // console.log(subject);
-            // console.log(term);
-
-
-            
-            
-
-           console.log(data);
-          // enter data into server
-
-
-         });
-
-
-           const options= {
-               method: 'post',
-               headers: {
-                   'content-type':'application/json'
-               },
-
-               
-               body: JSON.stringify(data)
-           }
-
-          fetch('http://localhost:3000',options); 
-
-    </script>
-
+<script>
+        const Datastore= require('nedb');
+      
+      const database= new Datastore({filename: 'database.db',autoload: true});
+      
+      database.loadDatabase();
+      
+      database.insert([{ a: 5 }, { a: 42 }], function (err, newDocs) {
+        // Two documents were inserted in the database
+        // newDocs is an array with these documents, augmented with their _id
+      });
+      console.log("server is running");
+</script>
+       
 </body>
 </html>

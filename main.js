@@ -1,4 +1,16 @@
+//server code
 
+// const Datastore= require('nedb');
+
+// const database= new Datastore({filename: 'database.db',autoload: true});
+
+// database.loadDatabase();
+
+// database.insert([{ a: 5 }, { a: 42 }], function (err, newDocs) {
+//   // Two documents were inserted in the database
+//   // newDocs is an array with these documents, augmented with their _id
+// });
+// console.log("server is running");
 
 
 
@@ -50,6 +62,9 @@ const {app, BrowserWindow,Menu,shell} = require('electron')
           ]
            
       },
+  
+      
+      
 
       {
         label: 'Help',
@@ -76,7 +91,7 @@ const {app, BrowserWindow,Menu,shell} = require('electron')
 
 //for server
 
-let server = require('./server.js')
+//let server = require('./server.js')
 
 
 app.on('ready', function(){
