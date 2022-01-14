@@ -1,6 +1,6 @@
 //server code
 
-// const Datastore= require('nedb');
+const Datastore= require('nedb');
 
 // const database= new Datastore({filename: 'database.db',autoload: true});
 

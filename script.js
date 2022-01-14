@@ -8,15 +8,15 @@
         // const term=document.getElementById("enter_term").value;
 
 
-// const Datastore= require('nedb');
+const Datastore= require('nedb');
 
-// const database= new Datastore({filename: 'database.db',autoload: true});
+const database= new Datastore({filename: 'database.db',autoload: true});
 
-// database.loadDatabase();
+database.loadDatabase();
 
-// database.insert([{ a: 5 }, { a: 42 }], function (err, newDocs) {
-//   // Two documents were inserted in the database
-//   // newDocs is an array with these documents, augmented with their _id
-// });
-// console.log("server is running");
+database.insert([{ a: 5 }, { a: 42 }], function (err, newDocs) {
+  // Two documents were inserted in the database
+  // newDocs is an array with these documents, augmented with their _id
+});
+console.log("server is running");
 
